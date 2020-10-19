@@ -8,7 +8,10 @@ pipeline {
 			input {
 				message "Is Manual Testing completed ?"
                 		ok "Yes"
-           		 }
+			} 
+			steps {
+				sh 'Manual Testing Done'
+			}
 		}
 		stage('Build') {
 			steps{
