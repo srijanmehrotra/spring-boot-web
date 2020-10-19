@@ -1,11 +1,8 @@
 pipeline {
-	agent any
+	agent { docker 'maven:3-alpine' }
+	agent { docker 'openjdk:8-jre' }
 	stages {
 		stage('Build') {
-			tools {
-          			maven 'maven3.3.9'
-          			 jdk 'JAVA8'
-    		    }
 			steps{
 				script {
 					sh 'mvn clean package'
