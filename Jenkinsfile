@@ -1,6 +1,8 @@
 pipeline {
-	agent { docker 'maven:3-alpine' }
-	agent { docker 'openjdk:8-jre' }
+	agent any
+	tools {
+        maven 'apache-maven-3.0.1' 
+    }
 	stages {
 		stage('Build') {
 			steps{
