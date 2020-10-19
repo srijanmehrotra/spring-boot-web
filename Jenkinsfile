@@ -10,7 +10,7 @@ pipeline {
                 		ok "Yes"
 			} 
 			steps {
-				sh 'Manual Testing Done'
+				sh 'echo Manual Testing Done'
 			}
 		}
 		stage('Build') {
