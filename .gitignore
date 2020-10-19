@@ -1,0 +1,17 @@
+target/
+logs/
+test-data/
+.settings/
+.classpath
+.project
+nb-configuration.xml
+bin/
+.checkstyle
+LOG_DIR_IS_UNDEFINED*
+.springBeans
+
+.idea/
+*.iml
+*.log
+
+k8s/segment-activation/*.yaml
