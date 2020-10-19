@@ -4,6 +4,12 @@ pipeline {
         	maven 'MAVEN_3'
     	}
 	stages {
+		stage('Manual Testing Completed') {
+			input {
+				message "Is Manual Testing completed ?"
+                		ok "Yes"
+           		 }
+		}
 		stage('Build') {
 			steps{
 				script {
@@ -12,20 +18,6 @@ pipeline {
 			}
 		}
 		
-		stage('Manual Testing') {
-			input {
-				message "Should we continue?"
-                		ok "Yes, we should."
-                		submitter "alice,bob"
-                		parameters {
-                    		string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                		}
-           		 }
-			steps{
-				sh 'echo $PERSON'
-			
-			}
 		
-		}
 	}
 }
